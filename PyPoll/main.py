@@ -34,16 +34,16 @@ with open(election_data, newline='', encoding= "utf-8") as csv_file:
     TOTAL_VOTES= len(total_votes)
     #KHAN_TOTAL is a constant, determined by the length of the voter list
     KHAN_TOTAL= len(khan_list)
-    khan_per= (round((int(KHAN_TOTAL)/int(TOTAL_VOTES)),3))*100
+    khan_per= (float(KHAN_TOTAL)/float(TOTAL_VOTES))*100
     #CORREY_TOTAL is a constant, determined by the length of the voter list
     CORREY_TOTAL= len(correy_list)
-    correy_per= (round((int(CORREY_TOTAL)/int(TOTAL_VOTES)),3))*100
+    correy_per= (float(CORREY_TOTAL)/float(TOTAL_VOTES))*100
     #LI_TOTAL is a constant, determined by the length of the voter list
     LI_TOTAL= len(li_list)
-    li_per= round((round((int(LI_TOTAL)/int(TOTAL_VOTES)),3))*100,3)
+    li_per= (float(LI_TOTAL)/float(TOTAL_VOTES))*100
     #OTOOLEY_TOTAL is a constant, determined by the length of the voter list
     OTOOLEY_TOTAL= len(otooley_list)
-    otooley_per= (round((int(OTOOLEY_TOTAL)/int(TOTAL_VOTES)),3))*100
+    otooley_per= (float(OTOOLEY_TOTAL)/float(TOTAL_VOTES))*100
     #define candidate dictionary with list of candidates and their respective
     #percentage of the popular vote
     summary= {"Candidates": ["Khan", "Correy", "Li", "O'Tooley"],
@@ -61,10 +61,10 @@ with open(output_file, "w", newline='') as processed:
     print("----------------------------------", file= processed)
     print(f"Total Votes: {TOTAL_VOTES}", file= processed)
     print("----------------------------------", file= processed)
-    print(f"Khan:{khan_per}% {KHAN_TOTAL}", file= processed)
-    print(f"Correy: {correy_per}% ({CORREY_TOTAL})", file= processed)
-    print(f"Li: {li_per}% ({LI_TOTAL})", file= processed)
-    print(f"O' Tooley: {otooley_per}% ({OTOOLEY_TOTAL})", file= processed)
+    print(f"Khan:{khan_per:.3f}% {KHAN_TOTAL}", file= processed)
+    print(f"Correy: {correy_per:.3f}% ({CORREY_TOTAL})", file= processed)
+    print(f"Li: {li_per:.3f}% ({LI_TOTAL})", file= processed)
+    print(f"O' Tooley: {otooley_per:.3f}% ({OTOOLEY_TOTAL})", file= processed)
     print("----------------------------------", file=processed)
     print(f"Winner: {winner}",file=processed)
     print("----------------------------------",file=processed)
@@ -74,10 +74,10 @@ print("Election Results ")
 print("----------------------------------")
 print(f"Total Votes: {TOTAL_VOTES}")
 print("----------------------------------")
-print(f"Khan:{khan_per}% ({KHAN_TOTAL})")
-print(f"Correy: {correy_per}% ({CORREY_TOTAL})")
-print(f"Li: {li_per}% ({LI_TOTAL})")
-print(f"O' Tooley: {otooley_per}% ({OTOOLEY_TOTAL})")
+print(f"Khan:{khan_per:.3f}% ({KHAN_TOTAL})")
+print(f"Correy: {correy_per:.3f}% ({CORREY_TOTAL})")
+print(f"Li: {li_per:.3f}% ({LI_TOTAL})")
+print(f"O' Tooley: {otooley_per:.3f}% ({OTOOLEY_TOTAL})")
 print("----------------------------------")
 print(f"Winner: {winner}")
 print("----------------------------------")
